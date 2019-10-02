@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {NgbActiveModal} from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-weather-light-box',
@@ -6,10 +7,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./weather-light-box.component.scss']
 })
 export class WeatherLightBoxComponent implements OnInit {
-
-  constructor() { }
+  weatherCity: any;
+  weatherReport: any;
+  constructor(public modalService: NgbActiveModal) { }
 
   ngOnInit() {
+    console.log(this.weatherCity, this.weatherReport);
   }
 
 }

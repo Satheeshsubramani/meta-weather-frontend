@@ -1,11 +1,25 @@
 import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
+import { RouterModule, Routes } from '@angular/router';
 
+import { HomepageComponent } from './components/homepage/homepage.component';
 
-const routes: Routes = [];
+export const routes: Routes = [
+  {
+    path: '',
+    component: HomepageComponent,
+    resolve: {  }
+  },
+  {
+    path: 'metaWeather',
+    redirectTo: '/'
+  },
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+
+export class AppRoutingModule {
+}
+

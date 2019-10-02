@@ -1,1 +1,66 @@
-<p>weather-light-box works!</p>
+<div class="confirm-light-box">
+  <div>
+    <div class="confirm-light-box-header">
+    <span class="confirm-light-box-header-right icon-align">
+      <i id="closeIcon" class="fa fa-window-close" aria-hidden="true" (click)="modalService.dismiss()"></i>
+    </span>
+      <span id="deleteEventsHeader"
+            class="text-title-2">Weather Details Information for {{weatherCity}}</span>
+      <hr/>
+    </div>
+    <div class="confirm-light-box-divider-content">
+      <p id="secondaryHeaderText">We are </p>
+      <div class="row">
+        <div class="col-6">
+          <div class="row form-group">
+            <label id="last-name-label" class="col-3 col-form-label">Last Name*</label>
+            <div class="col-9">
+
+            </div>
+          </div>
+          <div class="row form-group">
+            <label id="first-name-label" class="col-3 col-form-label" for="first-name">First Name*</label>
+            <div class="col-9">
+
+            </div>
+          </div>
+          <div class="row form-group">
+            <label id="phone-number-label" class="col-3 col-form-label">Phone Number*</label>
+            <div class="col-9">
+
+            </div>
+          </div>
+          <div class="row form-group" >
+            <label id="email-address-label" class="col-3 col-form-label">Email Address*</label>
+            <div class="col-9">
+            </div>
+          </div>
+          <div class="row form-group">
+            <label id="other-parish-label" class="col-3 col-form-label">Other Parish:</label>
+            <div class="col-9">
+            </div>
+          </div>
+        </div>
+        <div class="col-6">
+          <div class="row form-group">
+            <label id="dietary-restrictions-label" class="col-3 col-form-label">Dietary Restrictions</label>
+            <div class="col-9">
+            </div>
+          </div>
+          <div class="row form-group">
+            <label id="skills-label" class="col-3 col-form-label">Skills</label>
+            <div class="col-9">
+            </div>
+          </div>
+          <div class="row form-group">
+            <label id="other-carrier-label" class="col-3 col-form-label">Other Carrier*</label>
+            <div class="col-9">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div>
+    </div>
+  </div>
+</div>

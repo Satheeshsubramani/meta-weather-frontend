@@ -1,0 +1,48 @@
+// Confirmation light box
+.confirm-light-box {
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+.confirm-light-box-header {
+  line-height: 1;
+}
+
+.confirm-light-box-header > span {
+  display: block;
+}
+
+.confirm-light-box-header > hr {
+  margin-top: 10px;
+  margin-bottom: 0px;
+  border-top-color: #212529;
+}
+
+.confirm-light-box-divider-content {
+  margin-top: 14.5px;
+}
+
+.confirm-light-box-content-padding {
+  margin-left: 40px;
+  margin-top: -8px;
+  margin-bottom: 20px
+}
+
+.confirm-light-box-header > hr {
+  margin-top: 13px;
+  border-top-color: #212529;
+}
+
+.confirm-light-box-header-right,
+.confirm-light-box-footer-right {
+  text-align: right;
+}
+
+.icon-align {
+  padding-top: 10px;
+}
+
+.confirm-light-box-action {
+  float: right;
+  margin-bottom: 20px;
+}

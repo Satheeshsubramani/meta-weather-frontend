@@ -1,0 +1,22 @@
+.align-vertical {
+  align-items: center;
+}
+
+.float-right {
+  float: right;
+}
+
+.header-row {
+  padding-right: 32px;
+  padding-top: 16px;
+  padding-bottom: 15px;
+  background-color: white;
+  height: 10vh;
+}
+
+#homeLogoDiv {
+  cursor: pointer;
+  padding-right: 0;
+  text-decoration: none;
+  color: black;
+}

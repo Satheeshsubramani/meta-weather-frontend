@@ -1,1 +1,486 @@
-/* You can add global styles to this file, and also import other style files */
+$grid-breakpoints: (
+  xs: 0,
+  sm: 361px,
+  md: 769px,
+  lg: 1281px,
+  xl: 1921px
+);
+
+$container-max-widths: (
+  sm: 768px,
+  md: 1280px,
+  lg: 1920px,
+  xl: 2800px
+);
+
+@import '~bootstrap/scss/bootstrap';
+
+body {
+  background-image: url('/src/assets/img/weather.jpeg');
+  background-position: bottom;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.btn-primary {
+  padding: 2px 20px;
+  background-color: #1b8fc8;
+  font-size: 16px;
+}
+
+.btn-primary[disabled] {
+  background-color: #c9c9c9;
+  border-color: #c9c9c9;
+  color: #666666;
+  opacity: 0.65 !important;
+}
+
+.btn-secondary {
+  padding: 1px 18px;
+  background-color: white;
+  border: solid 2px #1b8fc8;
+  font-size: 16px;
+  color: black;
+}
+
+.btn-secondary[disabled] {
+  background-color: #c9c9c9;
+  border-color: #c9c9c9;
+  color: #666666;
+  opacity: 0.65 !important;
+}
+
+.page-header {
+  min-height: 85px;
+}
+
+.btn-short {
+  width: 91px;
+  height: 28px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.btn-long {
+  width: 200px;
+  height: 36px;
+}
+
+.btn-medium {
+  width: 200px;
+  height: 28px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.toolbar-header {
+  font-size: 32px;
+}
+
+.table-title {
+  font-size: 24px;
+  font-weight: normal;
+  background-color: rgba(51, 51, 51, 0.57);
+  color: white;
+  padding: 6px 10px;
+  width: 100%;
+}
+
+div.container-fluid {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.logo {
+  width: 64px;
+  height: 64px;
+  margin-right: 8px;
+}
+
+::placeholder,
+::-ms-input-placeholder,
+::-webkit-input-placeholder {
+  color: #1b8fc8;
+}
+
+.save-button-row {
+  margin-top: 10px;
+  padding-right: 10px;
+}
+
+.caption {
+  caption-side: top;
+  font-weight: bold;
+  padding-left: 10px;
+  color: white;
+  font-size: 1.5em;
+  float: left;
+}
+
+.alerts-header {
+  height: 3em;
+  font-size: 12pt;
+}
+
+.navigation-bar {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.modal-xxl .modal-lg {
+  max-width: 75%;
+}
+
+.modal-settings .modal-lg {
+  max-width: 50%;
+}
+
+.min-width-401 {
+  min-width: 401px;
+}
+
+.input-label {
+  font-weight: 700;
+}
+
+.nav-container-width {
+  flex: 1 auto;
+  max-width: min-content;
+}
+
+.table-container-width {
+  flex: 2 0;
+  margin-right: 16px;
+  margin-left: 16px;
+}
+
+.icons-padding {
+  margin-right: 22px;
+}
+
+.btn:disabled {
+  opacity: 0.25;
+  cursor: default;
+}
+
+.add-group-label {
+  cursor: pointer;
+}
+
+.assigned-participant-text {
+  color: grey;
+}
+
+.right-align {
+  float: right;
+}
+.left-align {
+  float: left;
+}
+
+.require-note {
+  float: left;
+  font-size: 13px;
+  font-style: italic;
+  padding-top: 12px;
+}
+
+th.sortable {
+  padding-right: 25px;
+  position: relative;
+  cursor: pointer;
+  user-select: none;
+}
+
+th.sortable i {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 10px;
+}
+
+#invalidEmailErrorMessage {
+  color: red;
+  font-size: 13px;
+}
+
+.hidden {
+  visibility: hidden;
+}
+
+.email-error-border-before {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  margin-bottom: 8px;
+}
+
+.email-error-border {
+  outline: red 1px solid;
+  padding-top: 7px;
+  padding-bottom: 7px;
+  margin-bottom: 8px;
+}
+
+.margin-bottom-8 {
+  margin-bottom: 8px;
+}
+
+.padding-top-error-message {
+  padding-top: 1rem !important;
+}
+
+.error-text {
+  font-size: 14px;
+  padding-left: 8px;
+}
+
+textarea {
+  overflow: auto;
+  resize: none;
+}
+
+.btn-settings {
+  padding: 1px 18px;
+  background-color: white;
+  border: solid 2px #1b8fc8;
+  font-size: 16px;
+  color: black;
+}
+
+.btn-settings:hover {
+  background-color: #007bff;
+}
+
+.nav-tabs .nav-link {
+  font-size: 14pt;
+  font-weight: normal;
+  color: #495057;
+  padding: 8px 10px;
+  width: 209px;
+
+  border: 0;
+  border-bottom: 1px solid #1b8fc8;
+}
+
+.nav-tabs .nav-link.active {
+  background-color: #cde6f3;
+  border-bottom: 1px solid #1b8fc8;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+.nav-tabs .nav-link:hover {
+  border: 0;
+  border-bottom: 1px solid #1b8fc8;
+}
+
+.nav-tabs {
+  border-bottom: 1px solid #1b8fc8;
+}
+
+.page-prompt-title {
+  padding-right: 0;
+  font-weight: 400;
+  font-size: 15pt;
+  font-family: Rubik;
+}
+.page-prompt-label {
+  cursor: pointer;
+  font-size: 13.5pt;
+  font-weight: 400;
+}
+
+.button-mode {
+  cursor: pointer;
+}
+
+//Color bars
+.ColorBar1 {
+  width: 11px;
+  margin-right: 5px;
+}
+
+.preferred-contact-checkbox {
+  margin-top: 25px;
+}
+
+#participantRegistrationLink,
+#volunteerRegistrationLink,
+#groupMemberRegistrationLink {
+  font-size: 0.8em;
+  font-style: italic;
+}
+
+.handCursor {
+  cursor: pointer;
+}
+
+label.box-header {
+  margin-bottom: 0;
+}
+
+/* top navigation bar */
+.top-nav-bar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 0.5rem 1rem;
+  align-items: center;
+}
+
+/* Style Guide - Lightboxes */
+.light-box {
+  margin: 20px;
+}
+
+.light-box-header {
+  line-height: 1;
+}
+
+.light-box-header > span {
+  display: block;
+}
+
+.light-box-header > hr {
+  margin-top: 10px;
+  border-top-color: #212529;
+}
+
+.light-box-content {
+  margin: 20px;
+}
+
+.light-box-content-2 {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.light-box-footer {
+  display: table;
+  width: 100%;
+}
+
+.light-box-footer > span {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.light-box-header-right,
+.light-box-footer-right {
+  text-align: right;
+}
+
+/* Style Guide - Fonts */
+.text-title-1 {
+  font-size: 24pt;
+}
+
+.text-title-2 {
+  font-size: 18pt;
+  color: #212529;
+}
+
+.text-title-3 {
+  font-size: 15pt;
+}
+
+.text-title-4 {
+  font-size: 13.5pt;
+}
+
+.text-title-5 {
+  font-size: 11pt;
+  font-weight: bold;
+}
+
+.text-title-6 {
+  font-size: 10pt;
+  font-weight: bold;
+}
+
+.text-content-1 {
+  font-size: 12pt;
+}
+
+.text-content-2 {
+  font-size: 11pt;
+}
+
+.text-content-3 {
+  font-size: 10pt;
+  font-weight: normal;
+}
+
+.text-content-4 {
+  font-size: 10pt;
+}
+
+.text-content-5 {
+  font-size: 10pt;
+  font-style: italic;
+  color: #595959;
+}
+
+.text-content-6 {
+  font-size: 10pt;
+  font-style: italic;
+  color: #919191;
+}
+
+.text-content-7 {
+  font-size: 10pt;
+  color: #dc3545;
+}
+
+.text-content-8 {
+  font-size: 9pt;
+}
+
+// Confirmation light box
+.confirm-light-box {
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+.confirm-light-box-header {
+  line-height: 1;
+}
+
+.confirm-light-box-header > span {
+  display: block;
+}
+
+.confirm-light-box-header > hr {
+  margin-top: 10px;
+  margin-bottom: 0px;
+  border-top-color: #212529;
+}
+
+.confirm-light-box-divider-content {
+  margin-top: 14.5px;
+}
+
+.confirm-light-box-content-padding {
+  margin-left: 40px;
+  margin-top: -8px;
+  margin-bottom: 20px
+}
+
+.confirm-light-box-header > hr {
+  margin-top: 13px;
+  border-top-color: #212529;
+}
+
+.confirm-light-box-header-right,
+.confirm-light-box-footer-right {
+  text-align: right;
+}
+
+.icon-align {
+  padding-top: 10px;
+}
+
+.confirm-light-box-action {
+  float: right;
+  margin-bottom: 20px;
+}

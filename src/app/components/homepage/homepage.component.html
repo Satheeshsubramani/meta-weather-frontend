@@ -1,1 +1,62 @@
-<p>homepage works!</p>
+<div class="container-fluid">
+  <app-header-bar></app-header-bar>
+  <div class="row">
+    <div id="sessionNavigationBar" class="nav-container-width">
+      <app-navigation-bar></app-navigation-bar>
+    </div>
+    <div class="page-container table-container-width">
+      <div class="row">
+        <div class="col-sm-12">
+          <div class="card tex-center text-white bg-info mb-3">
+            <div class="card-header">Apply Filters</div>
+            <form class="m-4">
+              <div class="row  justify-content-around">
+                <div class="form-group  col-4">
+                  <div class="row">
+                    <div class="form-group">
+                      <label class="h6 " >Search by location</label> &nbsp;
+                      <input name="search"
+                             [ngModelOptions]="{standalone: true}" type="text"
+                        [(ngModel)]="searchKey"
+                        (ngModelChange)="onSearchInputChange($event)"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+      <div class="row justify-content-around" *ngIf="!weatherReport">
+        <div class="col-sm-12">
+          <div class="card text-white bg-danger mb-3">
+            <div class="card-body">
+              <div class="row  justify-content-around">
+                <p class="card-text">No results found...</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-12" *ngIf="weatherReport">
+        <div class="card text-center border-dark text-body bg-light mb-3">
+          <div class="card-header bg-transparent border-info justify-content-center">City Name: {{weatherReport.data[0].city_name}}</div>
+          <div class="card-body text-info">
+            <h5 class="card-title"> Last weather observation : {{ weatherReport.data[0].ob_time | date: 'medium'}}</h5>
+          </div>
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item">Temperature (Celcius): {{ weatherReport.data[0].temp }}</li>
+            <li class="list-group-item">Wind Speed(m/s): {{ weatherReport.data[0].wind_spd }}</li>
+            <li class="list-group-item">Wind Direction:  {{ weatherReport.data[0].wind_dir }}</li>
+            <li class="list-group-item">Relative humidity (%):  {{ weatherReport.data[0].rh }}</li>
+            <li class="list-group-item">Weather Description:  {{ weatherReport.data[0].weather.description }}</li>
+          </ul>
+          <div class="card-footer">
+            <small class="text-muted" (click)="openWeatherDetailsModal()" style="cursor: pointer">View More</small>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
