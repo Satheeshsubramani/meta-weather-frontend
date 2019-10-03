@@ -9,10 +9,9 @@ import {NgbActiveModal} from '@ng-bootstrap/ng-bootstrap';
 export class WeatherLightBoxComponent implements OnInit {
   weatherCity: any;
   weatherReport: any;
-  constructor(public modalService: NgbActiveModal) { }
+  constructor(public activeModal: NgbActiveModal) { }
 
   ngOnInit() {
-    console.log(this.weatherCity, this.weatherReport);
   }
 
 }

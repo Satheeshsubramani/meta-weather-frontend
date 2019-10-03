@@ -2,7 +2,7 @@
   <div>
     <div class="confirm-light-box-header">
     <span class="confirm-light-box-header-right icon-align">
-      <i id="closeIcon" class="fa fa-window-close" aria-hidden="true" (click)="modalService.dismiss()"></i>
+      <i id="closeIcon" class="fa fa-window-close" aria-hidden="true" (click)="activeModal.dismiss()"></i>
     </span>
       <span id="deleteEventsHeader"
             class="text-title-2">Weather information for {{weatherCity}} City.</span>
@@ -15,19 +15,19 @@
           <div class="row form-group">
             <label id="city-label" class="col-3 col-form-label pt-0">City</label>
             <div class="col-9">
-              {{weatherCity}}
+              <span id="city-value">{{weatherCity}}</span>
             </div>
           </div>
           <div class="row form-group">
-            <label id="date-label" class="col-3 col-form-label pt-0">Date and TIme</label>
+            <label id="date-label" class="col-3 col-form-label pt-0">Date and Time</label>
             <div class="col-9">
-              {{ weatherReport.data[0].datetime}}
+              <span id="date-value">{{ weatherReport.data[0].datetime}}</span>
             </div>
           </div>
           <div class="row form-group">
             <label id="timezone-label" class="col-3 col-form-label pt-0">Time Zone</label>
             <div class="col-9">
-              {{ weatherReport.data[0].timezone}}
+              <span id="timezone-value">{{ weatherReport.data[0].timezone}}</span>
             </div>
           </div>
           <div class="row form-group">
