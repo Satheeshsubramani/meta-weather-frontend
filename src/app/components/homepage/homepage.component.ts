@@ -17,7 +17,7 @@ export class HomepageComponent implements OnInit {
   public searchKey = 'Chennai';
   public searchKeyDebouncedValue = this.searchKey;
   public weatherReport: any;
-  private searchKeyDebouncers: Subject<string> = new Subject();
+  public searchKeyDebouncers: Subject<string> = new Subject();
 
   constructor(public spinner: NgxSpinnerService,
               public ngbModal: NgbModal,
