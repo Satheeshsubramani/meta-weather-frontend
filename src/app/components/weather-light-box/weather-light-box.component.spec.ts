@@ -7,7 +7,7 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {CommonModule} from '@angular/common';
 import {HttpClientModule} from '@angular/common/http';
 
-fdescribe('WeatherLightBoxComponent', () => {
+describe('WeatherLightBoxComponent', () => {
   let component: WeatherLightBoxComponent;
   let fixture: ComponentFixture<WeatherLightBoxComponent>;
   let mockNgbActiveModal: NgbActiveModal;
