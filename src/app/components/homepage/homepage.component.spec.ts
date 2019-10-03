@@ -98,8 +98,4 @@ describe('HomepageComponent', () => {
     component.searchKeyDebouncers = new Subject();
     fixture.detectChanges();
   });
-
-  it('should create', () => {
-    expect(component).toBeTruthy();
-  });
 });
