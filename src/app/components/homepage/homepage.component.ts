@@ -1,10 +1,11 @@
 import {Component, ChangeDetectionStrategy, OnInit, Injector} from '@angular/core';
-import {HttpClient, HttpHeaders} from '@angular/common/http';
-import {Subject, BehaviorSubject} from 'rxjs';
-import {debounceTime, distinctUntilChanged} from 'rxjs/operators';
+import {Subject} from 'rxjs';
+import {count, debounceTime, distinctUntilChanged} from 'rxjs/operators';
 import {NgxSpinnerService} from 'ngx-spinner';
 import { NgbModal, NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
 import {WeatherLightBoxComponent} from '../weather-light-box/weather-light-box.component';
+import {ConfigurationService} from '../../services/configuration.service';
+import {SecureHttpClientService} from '../../services/secure-http-client/secure-http-client.service';
 
 @Component({
   selector: 'app-homepage',
@@ -18,10 +19,12 @@ export class HomepageComponent implements OnInit {
   public weatherReport: any;
   private searchKeyDebouncers: Subject<string> = new Subject();
 
-  constructor(private http: HttpClient, public spinner: NgxSpinnerService, public ngbModal: NgbModal) {
-  }
+  constructor(public spinner: NgxSpinnerService,
+              public ngbModal: NgbModal,
+              public configurationService: ConfigurationService,
+              public httpClient: SecureHttpClientService) { }
 
-  public ngOnInit(): void {
+  public ngOnInit() {
     this.setWeatherDebouncers();
 
     this.fetchWeatherReports(this.searchKey);
@@ -41,19 +44,13 @@ export class HomepageComponent implements OnInit {
     });
   }
 
-  private getHttpOptions() {
-    return {
-      headers: new HttpHeaders({'Content-Type': 'application/json'})
-    };
-  }
-
   private fetchWeatherReports(searchParameter: string): void {
     if (searchParameter) {
       this.spinner.show();
       const queryString = searchParameter.toLowerCase().trim();
-      const url = 'https://api.weatherbit.io/v2.0/current?city=' + queryString + '&key=779b066a0a514a508f513a773a2a4170';
+      const url = this.configurationService.getApiUrl() + '?city=' + queryString + '&key=779b066a0a514a508f513a773a2a4170';
       console.log(url);
-      this.http.get(url, this.getHttpOptions()).subscribe((results) => {
+      this.httpClient.getSearchResult(url).subscribe((results) => {
         this.weatherReport = results;
         this.spinner.hide();
       });
@@ -61,7 +58,6 @@ export class HomepageComponent implements OnInit {
   }
 
   openWeatherDetailsModal() {
-    console.log('openWeatherDetailsModal');
     const modal = this.ngbModal.open(WeatherLightBoxComponent, {
       centered: true,
       size: 'lg',
@@ -73,3 +69,4 @@ export class HomepageComponent implements OnInit {
     modal.componentInstance.weatherReport = this.weatherReport;
   }
 }
+

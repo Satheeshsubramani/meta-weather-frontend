@@ -41,7 +41,7 @@
       </div>
       <div class="col-sm-12" *ngIf="weatherReport">
         <div class="card text-center border-dark text-body bg-light mb-3">
-          <div class="card-header bg-transparent border-info justify-content-center">City Name: {{weatherReport.data[0].city_name}}</div>
+          <div class="card-header bg-transparent border-info justify-content-center">City Name: {{weatherReport.data[0].city_name}} <i class="fa fa-info-circle" aria-hidden="true" (click)="openWeatherDetailsModal()" style="cursor: pointer" title="View More Details"></i></div>
           <div class="card-body text-info">
             <h5 class="card-title"> Last weather observation : {{ weatherReport.data[0].ob_time | date: 'medium'}}</h5>
           </div>
@@ -53,7 +53,7 @@
             <li class="list-group-item">Weather Description:  {{ weatherReport.data[0].weather.description }}</li>
           </ul>
           <div class="card-footer">
-            <small class="text-muted" (click)="openWeatherDetailsModal()" style="cursor: pointer">View More</small>
+            <small class="text-muted" (click)="openWeatherDetailsModal()" style="cursor: pointer" title="View More Details">View More</small>
           </div>
         </div>
       </div>
