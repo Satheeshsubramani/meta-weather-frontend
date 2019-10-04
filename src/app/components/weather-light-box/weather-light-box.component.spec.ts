@@ -13,8 +13,6 @@ describe('WeatherLightBoxComponent', () => {
   let mockNgbActiveModal: NgbActiveModal;
   let compiled: any;
   const expectedWeatherData  = {
-    count: 1,
-    data: [{
       rh: 83,
       pod: 'd',
       lon: 80.27847,
@@ -56,8 +54,7 @@ describe('WeatherLightBoxComponent', () => {
       station: 'VOMM',
       elev_angle: 21.27,
       app_temp: 35.5
-    }]
-  };
+    };
 
   beforeEach(async(() => {
     mockNgbActiveModal = td.object(NgbActiveModal.prototype);
@@ -74,7 +71,7 @@ describe('WeatherLightBoxComponent', () => {
   beforeEach(() => {
     fixture = TestBed.createComponent(WeatherLightBoxComponent);
     component = fixture.componentInstance;
-    component.weatherCity = expectedWeatherData.data[0].city_name;
+    component.weatherCity = expectedWeatherData.city_name;
     component.weatherReport = expectedWeatherData;
     compiled = fixture.debugElement.nativeElement;
     fixture.detectChanges();
@@ -109,8 +106,8 @@ describe('WeatherLightBoxComponent', () => {
 
   });
   it('should have coorect data bondings', () => {
-    expect(compiled.querySelector('#city-value').innerText).toEqual(expectedWeatherData.data[0].city_name);
-    expect(compiled.querySelector('#date-value').innerText).toEqual(expectedWeatherData.data[0].datetime);
-    expect(compiled.querySelector('#timezone-value').innerText).toEqual(expectedWeatherData.data[0].timezone);
+    expect(compiled.querySelector('#city-value').innerText).toEqual(expectedWeatherData.city_name);
+    expect(compiled.querySelector('#date-value').innerText).toEqual(expectedWeatherData.datetime);
+    expect(compiled.querySelector('#timezone-value').innerText).toEqual(expectedWeatherData.timezone);
   });
 });

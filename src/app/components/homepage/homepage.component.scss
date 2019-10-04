@@ -9,3 +9,79 @@
 .button-header {
   padding: 12px
 }
+
+// Ng-Select Module custom style updates.
+::ng-deep .ng-dropdown-panel .ng-dropdown-panel-items .ng-option.ng-option-disabled {
+  color: #ef11a0;
+  font-weight: bolder;
+  font-family: 'Rubik sans-serif';
+}
+
+.table-container {
+  background-color: white;
+}
+
+// Kendo grid custom styles updated.
+::ng-deep .k-link {
+  font-weight: bold !important;
+  font-family: 'Rubik sans-serif';
+}
+
+::ng-deep .k-grid tr.k-alt {
+  background-color: white;
+}
+
+::ng-deep .k-grid thead tr:first-child {
+  background-color: white;
+}
+::ng-deep .k-grid thead tr:nth-child(2) {
+  background-color: white;
+}
+
+::ng-deep .k-grid tr {
+  background-color: #F0F0F0;
+}
+
+::ng-deep .k-grid-header, .k-grid-toolbar, .k-grouping-header, .k-grid-add-row, .k-grid-footer {
+  color: black;
+}
+
+::ng-deep .k-grid tbody {
+  color: black;
+}
+
+.header-text {
+  font-size: 1rem;
+  font-family: Rubik;
+  font-weight: bold;
+}
+
+::ng-deep .k-grid tr:hover {
+  background: transparent;
+  color: currentColor !important;
+}
+
+::ng-deep .k-grid tr.k-alt:hover {
+  background: transparent;
+  color: currentColor !important;
+}
+::ng-deep .k-pager-numbers .k-state-selected {
+  color: #1b8fc8;
+  background-color: lightgray;
+}
+::ng-deep .k-pager-numbers .k-link{
+  color: #1b8fc8;
+}
+::ng-deep .k-pager-numbers .k-link:hover, .k-pager-numbers .k-link.k-state-hover{
+  color: white;
+  background-color: #1b8fc8;
+}
+::ng-deep a.k-link.k-pager-nav:hover {
+  background-color: #1b8fc8;
+  color: white;
+}
+::ng-deep span.k-icon.k-i-arrow-e:hover {
+  color: white;
+}
+
+

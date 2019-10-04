@@ -9,7 +9,7 @@
       <hr/>
     </div>
     <div class="confirm-light-box-divider-content">
-      <p id="secondaryHeaderText">Overall weather prediction is {{ weatherReport.data[0].weather.description}}.</p>
+      <p id="secondaryHeaderText">Overall weather prediction is {{ weatherReport.weather.description}}.</p>
       <div class="row">
         <div class="col-6">
           <div class="row form-group">
@@ -21,38 +21,38 @@
           <div class="row form-group">
             <label id="date-label" class="col-3 col-form-label pt-0">Date and Time</label>
             <div class="col-9">
-              <span id="date-value">{{ weatherReport.data[0].datetime}}</span>
+              <span id="date-value">{{ weatherReport.datetime}}</span>
             </div>
           </div>
           <div class="row form-group">
             <label id="timezone-label" class="col-3 col-form-label pt-0">Time Zone</label>
             <div class="col-9">
-              <span id="timezone-value">{{ weatherReport.data[0].timezone}}</span>
+              <span id="timezone-value">{{ weatherReport.timezone}}</span>
             </div>
           </div>
           <div class="row form-group">
             <label id="sunrise-label" class="col-3 col-form-label pt-0">Sun Rise</label>
             <div class="col-9">
-              {{ weatherReport.data[0].sunrise}}
+              {{ weatherReport.sunrise}}
             </div>
           </div>
           <div class="row form-group" >
             <label id="sunset-label" class="col-3 col-form-label pt-0">Sun set</label>
             <div class="col-9">
-              {{ weatherReport.data[0].sunset}}
+              {{ weatherReport.sunset}}
             </div>
           </div>
 
           <div class="row form-group">
             <label id="winddirection-speed" class="col-3 col-form-label pt-0">Wind direction</label>
             <div class="col-9">
-              {{weatherReport.data[0].wind_cdir_full}}
+              {{weatherReport.wind_cdir_full}}
             </div>
           </div>
           <div class="row form-group">
             <label id="windspeed-label" class="col-3 col-form-label pt-0">Wind Speed</label>
             <div class="col-9">
-              {{weatherReport.data[0].wind_spd}}
+              {{weatherReport.wind_spd}}
             </div>
           </div>
         </div>
@@ -60,37 +60,37 @@
           <div class="row form-group">
             <label id="lastobservation-label" class="col-3 col-form-label pt-0">Last Observation</label>
             <div class="col-9">
-              {{weatherReport.data[0].last_ob_time | date :'medium'}}
+              {{weatherReport.last_ob_time | date :'medium'}}
             </div>
           </div>
           <div class="row form-group">
             <label id="temperature-label" class="col-3 col-form-label pt-0">Temperature</label>
             <div class="col-9">
-              {{weatherReport.data[0].temp}}
+              {{weatherReport.temp}}
             </div>
           </div>
           <div class="row form-group">
             <label id="snowfall-label" class="col-3 col-form-label pt-0">Snowfall</label>
             <div class="col-9">
-              {{weatherReport.data[0].snow}}
+              {{weatherReport.snow}}
             </div>
           </div>
           <div class="row form-group">
             <label id="visibility-label" class="col-3 col-form-label pt-0">Visibility(KM)</label>
             <div class="col-9">
-              {{weatherReport.data[0].vis}}
+              {{weatherReport.vis}}
             </div>
           </div>
           <div class="row form-group">
             <label id="clouds-label" class="col-3 col-form-label pt-0">Cloud coverage (%)</label>
             <div class="col-9">
-              {{weatherReport.data[0].clouds}}
+              {{weatherReport.clouds}}
             </div>
           </div>
           <div class="row form-group">
             <label id="rh-label" class="col-3 col-form-label pt-0">Relative humidity (%)</label>
             <div class="col-9">
-              {{weatherReport.data[0].rh}}
+              {{weatherReport.rh}}
             </div>
           </div>
         </div>

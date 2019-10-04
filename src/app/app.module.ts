@@ -2,6 +2,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { HttpClientModule } from '@angular/common/http';
+import { NgSelectModule } from '@ng-select/ng-select';
+import { GridModule } from '@progress/kendo-angular-grid';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -31,7 +33,9 @@ import { WeatherLightBoxComponent } from './components/weather-light-box/weather
     NgxSpinnerModule,
     FormsModule,
     HttpClientModule,
-    NgbModule
+    NgbModule,
+    NgSelectModule,
+    GridModule
   ],
   entryComponents: [
     WeatherLightBoxComponent

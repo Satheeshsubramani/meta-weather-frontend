@@ -5,24 +5,18 @@
       <app-navigation-bar></app-navigation-bar>
     </div>
     <div class="page-container table-container-width">
-      <div class="row">
+      <div class="row justify-content-center">
         <div class="col-sm-12">
-          <div class="card tex-center text-white bg-info mb-3">
-            <div class="card-header">Apply Filters</div>
+          <div class="card text-white bg-info text-center border-dark text-body mb-3">
+            <div class="card-header bg-transparent border-info justify-content-center">Apply Filters</div>
             <form class="m-4">
-              <div class="row  justify-content-around">
-                <div class="form-group  col-4">
+              <div class="row justify-content-center">
                   <div class="row">
-                    <div class="form-group">
-                      <label class="h6 " >Search by location</label> &nbsp;
-                      <input name="search"
-                             [ngModelOptions]="{standalone: true}" type="text"
-                        [(ngModel)]="searchKey"
-                        (ngModelChange)="onSearchInputChange($event)"
-                      />
+                    <div class="form-group" style="width: 250px">
+                      <label class="h6">Search by location</label> &nbsp;
+                      <ng-select id="eventsFilterDropDown"  [ngModelOptions]="{standalone: true}" [(ngModel)]="searchKey" bindLabel="name" (ngModelChange)="onSearchInputChange($event)" bindValue="pk_id" [items]="filterByLocation" [clearable]="false"></ng-select>
                     </div>
                   </div>
-                </div>
               </div>
             </form>
           </div>
@@ -40,21 +34,36 @@
         </div>
       </div>
       <div class="col-sm-12" *ngIf="weatherReport">
-        <div class="card text-center border-dark text-body bg-light mb-3">
-          <div class="card-header bg-transparent border-info justify-content-center">City Name: {{weatherReport.data[0].city_name}} <i class="fa fa-info-circle" aria-hidden="true" (click)="openWeatherDetailsModal()" style="cursor: pointer" title="View More Details"></i></div>
-          <div class="card-body text-info">
-            <h5 class="card-title"> Last weather observation : {{ weatherReport.data[0].ob_time | date: 'medium'}}</h5>
-          </div>
-          <ul class="list-group list-group-flush">
-            <li class="list-group-item">Temperature (Celcius): {{ weatherReport.data[0].temp }}</li>
-            <li class="list-group-item">Wind Speed(m/s): {{ weatherReport.data[0].wind_spd }}</li>
-            <li class="list-group-item">Wind Direction:  {{ weatherReport.data[0].wind_dir }}</li>
-            <li class="list-group-item">Relative humidity (%):  {{ weatherReport.data[0].rh }}</li>
-            <li class="list-group-item">Weather Description:  {{ weatherReport.data[0].weather.description }}</li>
-          </ul>
-          <div class="card-footer">
-            <small class="text-muted" (click)="openWeatherDetailsModal()" style="cursor: pointer" title="View More Details">View More</small>
-          </div>
+        <div class="table-container">
+          <kendo-grid id="weatherReportGrid" [data]="this.weatherReportData" [height]="683" [sortable]="{allowUnsort: false}" [filterable]="true" [sort]="sort" [resizable]="true" [pageSize]="10" [pageable]="true">
+            <kendo-grid-column field="city_name" id=city_name title="City Name">
+              <ng-template class="sortable" kendoGridHeaderTemplate let-column let-columnIndex="columnIndex">
+                <span class="header-text">City Name<i class="fas fa-sort float-right"></i></span>
+              </ng-template>
+            </kendo-grid-column>
+            <kendo-grid-column field="ob_time" id=ob_time title="Last weather observation">
+              <ng-template class="sortable" kendoGridHeaderTemplate let-column let-columnIndex="columnIndex">
+                <span class="header-text">Last weather observation<i class="fas fa-sort float-right"></i></span>
+              </ng-template>
+            </kendo-grid-column>
+            <kendo-grid-column field="temp" id=temp title="Temperature (Celcius)">
+              <ng-template class="sortable" kendoGridHeaderTemplate let-column let-columnIndex="columnIndex">
+                <span class="header-text">Temperature (Celcius)<i class="fas fa-sort float-right"></i></span>
+              </ng-template>
+            </kendo-grid-column>
+            <kendo-grid-column field="weather.description" id=WeatherDescription title="Weather Description">
+              <ng-template class="sortable" kendoGridHeaderTemplate let-column let-columnIndex="columnIndex">
+                <span class="header-text">WeatherDescription<i class="fas fa-sort float-right"></i></span>
+              </ng-template>
+            </kendo-grid-column>
+            <kendo-grid-column  id=Actions title="Actions">
+
+
+              <ng-template kendoGridCellTemplate let-dataItem>
+                <button kendoGridEditCommand type="button" [primary]="true" (click)="openWeatherDetailsModal(dataItem)">View More Details</button>
+              </ng-template>
+            </kendo-grid-column>
+          </kendo-grid>
         </div>
       </div>
     </div>
