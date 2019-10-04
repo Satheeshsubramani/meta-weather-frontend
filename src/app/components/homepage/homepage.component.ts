@@ -163,10 +163,6 @@ export class HomepageComponent implements OnInit {
       pk_id: 'Perth',
       disabled: false
     }, {
-      name: '=========',
-      pk_id: '======4444',
-      disabled: false
-    }, {
       name: 'India Cities',
       pk_id: 'Delhi',
       disabled: true
