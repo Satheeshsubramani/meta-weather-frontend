@@ -35,7 +35,7 @@
       </div>
       <div class="col-sm-12" *ngIf="weatherReport">
         <div class="table-container">
-          <kendo-grid id="weatherReportGrid" [data]="this.weatherReportData" [height]="600" [pageSize]="10" [pageable]="true">
+          <kendo-grid id="weatherReportGrid" [data]="this.weatherReportData" [height]="600">
             <kendo-grid-column field="city_name" id=city_name title="City Name">
               <ng-template class="sortable" kendoGridHeaderTemplate let-column let-columnIndex="columnIndex">
                 <span class="header-text">City Name</span>
