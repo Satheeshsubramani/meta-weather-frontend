@@ -245,7 +245,6 @@ export class HomepageComponent implements OnInit {
       this.spinner.show();
       const queryString = searchParameter.toLowerCase().trim();
       const url = this.configurationService.getApiUrl() + '?city=' + queryString + '&key=779b066a0a514a508f513a773a2a4170';
-      console.log(url);
       this.httpClient.getSearchResult(url).subscribe((results) => {
         this.weatherReport = results;
         const isExist = this.weatherReportData.find(data => {
