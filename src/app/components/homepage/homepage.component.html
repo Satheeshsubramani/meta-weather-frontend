@@ -1,14 +1,14 @@
 <div class="container-fluid">
   <app-header-bar></app-header-bar>
-  <div class="row">
+  <div class="row bg">
     <div id="sessionNavigationBar" class="nav-container-width">
       <app-navigation-bar></app-navigation-bar>
     </div>
     <div class="page-container table-container-width">
       <div class="row justify-content-center">
-        <div class="col-sm-12">
-          <div class="card text-white bg-info text-center border-dark text-body mb-3">
-            <div class="card-header bg-transparent border-info justify-content-center">Apply Filters</div>
+        <div class="col-sm-4">
+          <div class="card text-white text-center border-dark text-body mb-3">
+            <div class="card-header bg-transparent border-info justify-content-center">Filter container</div>
             <form class="m-4">
               <div class="row justify-content-center">
                   <div class="row">
@@ -35,7 +35,7 @@
       </div>
       <div class="col-sm-12" *ngIf="weatherReport">
         <div class="table-container">
-          <kendo-grid id="weatherReportGrid" [data]="this.weatherReportData" [height]="600">
+          <kendo-grid id="weatherReportGrid" [data]="this.weatherReportData" [height]="400">
             <kendo-grid-column field="city_name" id=city_name title="City Name">
               <ng-template class="sortable" kendoGridHeaderTemplate let-column let-columnIndex="columnIndex">
                 <span class="header-text">City Name</span>

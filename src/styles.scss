@@ -17,7 +17,10 @@ $container-max-widths: (
 @import '~bootstrap/scss/bootstrap';
 
 body {
-  background-image: url('/src/assets/img/weather.jpeg');
+  font-family: 'Rubik', sans-serif;
+}
+.bg {
+  background-image: url('src/assets/img/weather.jpg');
   background-position: bottom;
   background-repeat: no-repeat;
   background-size: cover;

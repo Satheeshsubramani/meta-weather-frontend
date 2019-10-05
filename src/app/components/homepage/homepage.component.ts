@@ -1,5 +1,6 @@
 import {Component, ChangeDetectionStrategy, OnInit, Injector} from '@angular/core';
 import {Subject} from 'rxjs';
+import * as _ from 'lodash';
 import {count, debounceTime, distinctUntilChanged} from 'rxjs/operators';
 import {NgxSpinnerService} from 'ngx-spinner';
 import {NgbModal, NgbModalRef} from '@ng-bootstrap/ng-bootstrap';
@@ -247,14 +248,14 @@ export class HomepageComponent implements OnInit {
       const url = this.configurationService.getApiUrl() + '?city=' + queryString + '&key=779b066a0a514a508f513a773a2a4170';
       this.httpClient.getSearchResult(url).subscribe((results) => {
         this.weatherReport = results;
-        const isExist = this.weatherReportData.find(data => {
+        // tslint:disable-next-line:only-arrow-functions
+        const lastObservationData = _.remove(this.weatherReportData, function(data) {
+           // @ts-ignore
           return data.city_name === results.data[0].city_name;
         });
-        // Simple logic to avoid duplicate data in Grid.
-        if (isExist) {
-        } else {
-          this.weatherReportData.push(results.data[0]);
-        }
+        console.log(lastObservationData);
+        // Simple logic to avoid duplicate data in Grid and fetech latestmobservation from back end.
+        this.weatherReportData.push(results.data[0]);
         this.spinner.hide();
       });
     }
