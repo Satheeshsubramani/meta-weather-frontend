@@ -24,7 +24,7 @@
       </div>
       <div class="row justify-content-around" *ngIf="!weatherReport">
         <div class="col-sm-12">
-          <div class="card text-white bg-danger mb-3">
+          <div class="card text-danger mb-3">
             <div class="card-body">
               <div class="row  justify-content-around">
                 <p class="card-text">No results found...</p>
@@ -38,12 +38,12 @@
           <kendo-grid id="weatherReportGrid" [data]="this.weatherReportData" [height]="400">
             <kendo-grid-column field="city_name" id=city_name title="City Name">
               <ng-template class="sortable" kendoGridHeaderTemplate let-column let-columnIndex="columnIndex">
-                <span class="header-text">City Name</span>
+                <span class="header-text">City name</span>
               </ng-template>
             </kendo-grid-column>
             <kendo-grid-column field="ob_time" id=ob_time title="Last weather observation">
               <ng-template class="sortable" kendoGridHeaderTemplate let-column let-columnIndex="columnIndex">
-                <span class="header-text">Last weather observation</span>
+                <span class="header-text">Last observation</span>
               </ng-template>
             </kendo-grid-column>
             <kendo-grid-column field="temp" id=temp title="Temperature (Celcius)">
@@ -53,7 +53,7 @@
             </kendo-grid-column>
             <kendo-grid-column field="weather.description" id=WeatherDescription title="Weather Description">
               <ng-template class="sortable" kendoGridHeaderTemplate let-column let-columnIndex="columnIndex">
-                <span class="header-text">WeatherDescription</span>
+                <span class="header-text">Weather description</span>
               </ng-template>
             </kendo-grid-column>
             <kendo-grid-column  id=Actions title="Actions">

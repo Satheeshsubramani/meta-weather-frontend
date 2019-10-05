@@ -8,88 +8,88 @@
             class="text-title-2">Weather information for {{weatherCity}} City.</span>
       <hr/>
     </div>
-    <div class="confirm-light-box-divider-content">
+    <div class="confirm-light-box-divider-content" style="padding: 20px">
       <p id="secondaryHeaderText">Overall weather prediction is {{ weatherReport.weather.description}}.</p>
-      <div class="row">
+      <div class="row" style="padding: 20px">
         <div class="col-6">
           <div class="row form-group">
-            <label id="city-label" class="col-3 col-form-label pt-0">City</label>
-            <div class="col-9">
+            <label id="city-label" class="col-5 col-form-label pt-0">City</label>
+            <div class="col-7">
               <span id="city-value">{{weatherCity}}</span>
             </div>
           </div>
           <div class="row form-group">
-            <label id="date-label" class="col-3 col-form-label pt-0">Date and Time</label>
-            <div class="col-9">
+            <label id="date-label" class="col-5 col-form-label pt-0">Date and Time</label>
+            <div class="col-7">
               <span id="date-value">{{ weatherReport.datetime}}</span>
             </div>
           </div>
           <div class="row form-group">
-            <label id="timezone-label" class="col-3 col-form-label pt-0">Time Zone</label>
-            <div class="col-9">
+            <label id="timezone-label" class="col-5 col-form-label pt-0">Time Zone</label>
+            <div class="col-7">
               <span id="timezone-value">{{ weatherReport.timezone}}</span>
             </div>
           </div>
           <div class="row form-group">
-            <label id="sunrise-label" class="col-3 col-form-label pt-0">Sun Rise</label>
-            <div class="col-9">
+            <label id="sunrise-label" class="col-5 col-form-label pt-0">Sun Rise</label>
+            <div class="col-7">
               {{ weatherReport.sunrise}}
             </div>
           </div>
           <div class="row form-group" >
-            <label id="sunset-label" class="col-3 col-form-label pt-0">Sun set</label>
-            <div class="col-9">
+            <label id="sunset-label" class="col-5 col-form-label pt-0">Sun set</label>
+            <div class="col-7">
               {{ weatherReport.sunset}}
             </div>
           </div>
 
           <div class="row form-group">
-            <label id="winddirection-speed" class="col-3 col-form-label pt-0">Wind direction</label>
-            <div class="col-9">
+            <label id="winddirection-speed" class="col-5 col-form-label pt-0">Wind direction (degree)</label>
+            <div class="col-7">
               {{weatherReport.wind_cdir_full}}
             </div>
           </div>
           <div class="row form-group">
-            <label id="windspeed-label" class="col-3 col-form-label pt-0">Wind Speed</label>
-            <div class="col-9">
+            <label id="windspeed-label" class="col-5 col-form-label pt-0">Wind Speed (m/s)</label>
+            <div class="col-7">
               {{weatherReport.wind_spd}}
             </div>
           </div>
         </div>
         <div class="col-6">
           <div class="row form-group">
-            <label id="lastobservation-label" class="col-3 col-form-label pt-0">Last Observation</label>
-            <div class="col-9">
+            <label id="lastobservation-label" class="col-5 col-form-label pt-0">Last Observation</label>
+            <div class="col-7">
               {{weatherReport.last_ob_time | date :'medium'}}
             </div>
           </div>
           <div class="row form-group">
-            <label id="temperature-label" class="col-3 col-form-label pt-0">Temperature</label>
-            <div class="col-9">
+            <label id="temperature-label" class="col-5 col-form-label pt-0">Temperature</label>
+            <div class="col-7">
               {{weatherReport.temp}}
             </div>
           </div>
           <div class="row form-group">
-            <label id="snowfall-label" class="col-3 col-form-label pt-0">Snowfall</label>
-            <div class="col-9">
+            <label id="snowfall-label" class="col-5 col-form-label pt-0">Snowfall(mm/hr)</label>
+            <div class="col-7">
               {{weatherReport.snow}}
             </div>
           </div>
           <div class="row form-group">
-            <label id="visibility-label" class="col-3 col-form-label pt-0">Visibility(KM)</label>
-            <div class="col-9">
+            <label id="visibility-label" class="col-5 col-form-label pt-0">Visibility(KM)</label>
+            <div class="col-7">
               {{weatherReport.vis}}
             </div>
           </div>
           <div class="row form-group">
-            <label id="clouds-label" class="col-3 col-form-label pt-0">Cloud coverage (%)</label>
-            <div class="col-9">
+            <label id="clouds-label" class="col-5 col-form-label pt-0">Cloud coverage (%)</label>
+            <div class="col-7">
               {{weatherReport.clouds}}
             </div>
           </div>
           <div class="row form-group">
-            <label id="rh-label" class="col-3 col-form-label pt-0">Relative humidity (%)</label>
-            <div class="col-9">
+            <label id="rh-label" class="col-5 col-form-label pt-0">Relative humidity (%)</label>
+            <div class="col-7">
               {{weatherReport.rh}}
             </div>
           </div>
