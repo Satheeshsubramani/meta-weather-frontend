@@ -37,7 +37,7 @@
     "@progress/kendo-drawing": "^1.6.0",
     "@progress/kendo-theme-default": "^4.3.3",
     "bootstrap": "^4.3.1",
-    "lodash": "^4.17.15",
+    "lodash": "^4.17.19",
     "ngx-spinner": "^8.0.3",
     "rxjs": "~6.4.0",
     "testdouble": "^3.12.4",
